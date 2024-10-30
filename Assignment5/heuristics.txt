@@ -1,0 +1,69 @@
+1.
+void display_welcome_message() {
+    cout << "=========================================\n";
+    cout << "|         WELCOME TO TACTIFIT            |\n";
+    cout << "=========================================\n";
+    cout << "|   YOUR PERSONAL FITNESS TRACKING APP.  |\n";
+    cout << "=========================================\n";
+    
+    cout << "\nTactiFit is specifically designed for military personnel, helping you to efficiently track your workouts,"; 
+    cout << "\nset achievable fitness goals, and monitor your progress over time. With TactiFit, you can optimize your";
+    cout << "\ntraining, stay accountable and ensure that you are meeting the rigorous physical demands of military service.";
+    cout << "\nThe app provides a user-friendly interface to log workouts, view progress, and adjust your fitness objectives,"; 
+    cout << "\nenabling you to enhance your performance and readiness.\n"; // INCLUSIVITY HEURISTIC #1
+}
+
+2.
+if (!user.is_logged_in() && choice > 1 && choice < 6) {
+            cout << "Please log in first to access this feature.\n"; // INCLUSIVITY HEURISTIC #2 - Cost is signing in before seeing features.
+            continue;
+        }
+
+3. and 4.
+// INCLUSIVITY HEURISTIC #4 - the menu is always available to tinker with
+        cout << "2. Log Workout\n"
+             << "3. Set Fitness Goal (preferebly before logging workout)\n"
+             << "4. View Progress\n"
+             << "5. Explain Costs of Using TactiFit\n" //this remains accessible
+             << "6. Exit\n";
+        cout << "Choose an option: "; // INCLUSIVITY HEURISTIC #3 - Can choose options they want to proceed with (comes after INCLUSIVITY HEURISTIC #2)
+
+4. and 5.
+//INCLUSIVITY HEURISTIC #4 and #5
+//undo the last logged workout
+void User::undo_workout() {
+    if (workoutHistory.empty()) {
+        cout << "No workout to undo." << endl;
+        return;
+    }
+
+    //restore the last workout log state
+    workoutLog = workoutHistory.top(); //revert to the previous workout log
+    workoutHistory.pop(); //remove the last entry from the history
+    cout << "Last workout entry undone." << endl;
+}
+
+//INCLUSIVITY HEURISTIC #4 and #5 - but for goals
+//undo the last fitness goal set
+void User::undo_goal() {
+    if (goalHistory.empty()) {
+        cout << "No fitness goal to undo." << endl;
+        return;
+    }
+
+    //restore the last fitness goal state
+    fitnessGoal = goalHistory.top(); //revert to the previous fitness goal
+    goalHistory.pop(); //remove the last entry from the history
+    cout << "Last fitness goal entry undone." << endl;
+}
+
+
+6.
+    cout << "\nMenu Options:\n"; // INCLUSIVITY HEURISTIC #6
+
+7.
+void User::set_fitness_goal() ...
+void User::log_workout() ...
+
+8.
+menu
