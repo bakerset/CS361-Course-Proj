@@ -35,7 +35,7 @@ int main() {
     int choice;
 
     while (true) {
-        cout << "\nMenu Options:\n"; // INCLUSIVITY HEURISTIC #6
+        cout << "\nMenu Options:\n"; //IH6 menu options
         
         if (!user.is_logged_in() && !user.is_user_registered()) {
             cout << "1. Sign Up\n";
@@ -43,38 +43,36 @@ int main() {
             cout << "1. Login\n";
         }
         
-        // INCLUSIVITY HEURISTIC #4 - the menu is always available to tinker with
         cout << "2. Log Workout\n"
-             << "3. Set Fitness Goal (preferebly before logging workout)\n"
+             << "3. Set Fitness Goal (preferably before logging workout)\n"
              << "4. View Progress\n"
-             << "5. Explain Costs of Using TactiFit\n" //this remains accessible
-             << "6. Exit\n";
-        cout << "Choose an option: "; // INCLUSIVITY HEURISTIC #3 - Can choose options they want to proceed with (comes after INCLUSIVITY HEURISTIC #2)
+             << "5. Explain Costs of Using TactiFit\n" //remains accesible
+             << "6. Exit\n"
+             << "7. Search Workout\n";  //new search option - IH7 Search workout
+        cout << "Choose an option: "; //IH3 choose options
 
         cin >> choice;
 
         //input validation for choice
-        if (cin.fail() || choice < 1 || choice > 6) {
-            cin.clear(); //clear the error state
-            cin.ignore(numeric_limits<streamsize>::max(), '\n'); //ignore invalid input
-            cout << "Invalid input. Please enter a number between 1 and 6." << endl;
+        if (cin.fail() || choice < 1 || choice > 7) {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Invalid input. Please enter a number between 1 and 7." << endl;
             continue;
         }
 
-        //allowing access to option 5 without being registered or logged in
         if (choice == 5) {
             explain_costs();
-            continue; //skip to the next iteration after showing costs
+            continue;
         }
 
-        //validation logic to allow access to other options if not logged in
         if (!user.is_user_registered() && choice != 1 && choice != 6) {
             cout << "Please sign up first to access other options.\n";
             continue;
         }
 
         if (!user.is_logged_in() && choice > 1 && choice < 6) {
-            cout << "Please log in first to access this feature.\n"; // INCLUSIVITY HEURISTIC #2 - Cost is signing in before seeing features.
+            cout << "Please log in first to access this feature.\n"; //IH2 Log-in first
             continue;
         }
 
@@ -110,6 +108,9 @@ int main() {
             case 6:
                 cout << "Goodbye!\n";
                 return 0;
+            case 7:
+                user.search_workout(); //IH7 Search workout
+                break;
             default:
                 cout << "Invalid option. Please try again.\n";
         }

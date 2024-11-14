@@ -42,6 +42,8 @@ public:
     void view_progress();
     void undo_workout();
     void undo_goal();
+    void search_workout();
+    void display_workout(const Workout& workout) const;
 
 private:
     string username;
