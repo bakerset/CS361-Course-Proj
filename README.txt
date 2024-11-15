@@ -16,5 +16,4 @@ B: How to RECIEVE data from microservice (how the user/client/program would reci
   Step 2: Read response.txt and print the response to terminal
   Step 3: Update the JSON with ticket amounts (accumulate tickets or add) for selected route.
 
-C:
-
+C: ![Screenshot](Assignment/UML Diagram.png)
