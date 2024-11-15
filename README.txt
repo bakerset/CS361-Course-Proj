@@ -1,4 +1,4 @@
-# CS361-Course-Proj
+# CS361-Course-Project - Assignment 8 Info
 
 Communications Contract:
 
