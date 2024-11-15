@@ -11,7 +11,7 @@ Update the following in your microservice (would be updated via user input most 
 Step 2: Automatically Done by Microservice
 You would run "python choimicroA.py" in the terminal, this runs forever while the testprogram is used to recieve data. After the program writes to request.txt, the microservice will read the request, process it, update the ticket sales via the routes.json, and write the result to response.txt.
 
-B: How to RECIEVE data from microservice:
+B: How to RECIEVE data from microservice (how the user would recieve data):
   Step 1: Call response.txt to be read
   Step 2: Read response.txt and print the response to terminal
   Step 3: Update the JSON with ticket amounts (accumulate tickets or add) for selected route.
