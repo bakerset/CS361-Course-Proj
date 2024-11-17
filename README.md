@@ -18,3 +18,8 @@ You would run "python choimicroA.py" in the terminal, this runs forever while th
  #### Step 3: Update the JSON with ticket amounts (accumulate tickets or add) for selected route.
 
 C: ![Screenshot](images/UMLdiagram.png)
+
+### Requirements: Python Library
+
+### Testing:
+    #### After running "python choimicroA.py" you can also run "python testprogramchoi.py" to see what type of response and changes you would get
